@@ -3,46 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Undangan Pernikahan Adnan & Dilla</title>
+  <title>Pernikahan Adnan & Dilla</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    const eventDate = new Date("2025-07-20T08:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+      if (distance < 0) return;
+      document.getElementById("countdown").innerHTML =
+        Math.floor(distance / (1000 * 60 * 60 * 24)) + " hari lagi";
+    }, 1000);
+
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
   <style>
     body {
       background: linear-gradient(to bottom right, #1f1c2c, #928dab);
       color: #f3f4f6;
-      overflow-x: hidden;
     }
     .glass {
       backdrop-filter: blur(20px);
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .falling-flowers {
-      position: fixed;
-      top: -50px;
-      animation: fall 10s linear infinite;
-      opacity: 0.6;
-      pointer-events: none;
-    }
-    @keyframes fall {
-      0% { transform: translateY(-50px) rotate(0deg); }
-      100% { transform: translateY(110vh) rotate(360deg); }
-    }
   </style>
 </head>
 <body class="font-sans">
-  <!-- Musik Latar -->
-  <audio autoplay loop hidden>
-    <source src="https://files.catbox.moe/fh3m4o.mp3" type="audio/mpeg">
-  </audio>
 
-  <!-- Bunga Jatuh -->
-  <img src="https://i.imgur.com/H6o9ojC.png" class="falling-flowers" style="left:10%;" />
-  <img src="https://i.imgur.com/H6o9ojC.png" class="falling-flowers" style="left:50%;" />
-  <img src="https://i.imgur.com/H6o9ojC.png" class="falling-flowers" style="left:80%;" />
+  <!-- Pemutar Lagu -->
+  <div style="display: none;">
+    <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/never-die-135100287/goblock-band-selamat-tinggal&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false">
+    </iframe>
+  </div>
 
-  <!-- Header -->
   <header class="text-center py-12 glass mx-4 mt-6 rounded-xl shadow-xl" data-aos="fade-up">
     <h1 class="text-5xl font-bold text-white tracking-wide">Adnan & Dilla</h1>
     <p class="text-2xl mt-2 text-gray-200 italic">Akan Menikah</p>
@@ -50,7 +50,6 @@
     <p id="countdown" class="text-md mt-2 text-blue-200 font-medium"></p>
   </header>
 
-  <!-- Main Content -->
   <main class="max-w-4xl mx-auto px-4 py-12">
     <section class="text-center mb-10" data-aos="fade-up">
       <h2 class="text-3xl font-semibold mb-4 text-pink-200">Dengan Cinta dan Restu</h2>
@@ -61,37 +60,30 @@
       <p class="italic text-pink-100 text-lg">"Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri..."<br/> (QS. Ar-Rum: 21)</p>
     </section>
 
-    <!-- Detail Acara -->
     <section class="glass p-8 rounded-xl shadow-lg mb-12 text-center" data-aos="fade-up">
       <h3 class="text-2xl font-semibold mb-4 text-white">Detail Acara</h3>
-      <p class="text-xl text-gray-100">Akad Nikah: <span class="font-medium">Sabtu, 20 Juli 2025 — 08.00-10.00 WIB</span></p>
-      <p class="text-xl text-gray-100 mt-2">Resepsi: <span class="font-medium">Minggu, 21 Juli 2025 — 11.00-14.00 WIB</span></p>
+      <p class="text-xl text-gray-100">Akad Nikah: <span class="font-medium">Sabtu, 08.00 - 10.00 WIB</span></p>
+      <p class="text-xl text-gray-100 mt-2">Resepsi: <span class="font-medium">Minggu, 11.00 - 14.00 WIB</span></p>
       <p class="text-lg text-gray-200 mt-4">Kedai Ibu, Jl. Utama Gg. Pelita Taqwa, Pekanbaru</p>
       <a href="https://maps.app.goo.gl/6s1XA23MF6HbjnGG6" target="_blank" class="block mt-4 text-blue-300 underline hover:text-blue-100">Lihat Lokasi di Google Maps</a>
     </section>
 
-    <!-- Galeri -->
     <section class="mb-12 text-center" data-aos="fade-up">
-      <h3 class="text-2xl font-semibold mb-4 text-pink-200">Galeri Cinta Kami</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="https://i.imgur.com/AGZabYW.jpeg" alt="Prewedding 1" class="rounded-lg shadow-xl" data-aos="zoom-in">
-        <img src="https://i.imgur.com/C2oKle5.jpeg" alt="Prewedding 2" class="rounded-lg shadow-xl" data-aos="zoom-in">
-        <img src="https://i.imgur.com/uxz5AeH.jpeg" alt="Prewedding 3" class="rounded-lg shadow-xl" data-aos="zoom-in">
-        <img src="https://i.imgur.com/l4sE5p0.jpeg" alt="Prewedding 4" class="rounded-lg shadow-xl" data-aos="zoom-in">
+      <h3 class="text-2xl font-semibold mb-4 text-pink-200">Foto Prewedding Kami</h3>
+      <div class="flex justify-center">
+        <img src="https://i.imgur.com/AGZabYW.jpeg" alt="Foto Prewedding" class="rounded-lg shadow-xl max-w-xs md:max-w-md" data-aos="zoom-in">
       </div>
     </section>
 
-    <!-- Form Ucapan -->
     <section class="glass p-8 rounded-xl shadow-lg text-center" data-aos="fade-up">
       <h3 class="text-2xl font-semibold mb-4 text-white">Kirim Ucapan</h3>
-      <form action="https://formspree.io/f/yourformid" method="POST" class="flex flex-col gap-4 max-w-md mx-auto">
-        <input type="text" name="nama" placeholder="Nama Anda" class="p-3 rounded bg-gray-100 text-black placeholder-gray-500" required />
-        <textarea name="pesan" placeholder="Ucapan..." rows="4" class="p-3 rounded bg-gray-100 text-black placeholder-gray-500" required></textarea>
+      <form class="flex flex-col gap-4 max-w-md mx-auto">
+        <input type="text" placeholder="Nama Anda" class="p-3 rounded bg-gray-100 text-black placeholder-gray-500" />
+        <textarea placeholder="Ucapan..." rows="4" class="p-3 rounded bg-gray-100 text-black placeholder-gray-500"></textarea>
         <button type="submit" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white py-2 rounded hover:opacity-90">Kirim</button>
       </form>
     </section>
 
-    <!-- WhatsApp Share -->
     <div class="mt-10 text-center" data-aos="fade-up">
       <a href="https://api.whatsapp.com/send?text=Hai%2C%20saya%20mengundang%20Anda%20ke%20pernikahan%20Adnan%20dan%20Dilla!%20Cek%20undangannya%20di%20https%3A%2F%2Fnamadomainanda.com"
          target="_blank"
@@ -101,27 +93,8 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="text-center py-6 text-sm text-gray-300" data-aos="fade-up">
-    &copy; 2025 Adnan & Dilla. Dibuat dengan cinta oleh Caretaker & Teknologi.
+    &copy; 2025 Adnan & Dilla. Dibuat dengan cinta dan teknologi oleh Caretaker.
   </footer>
-
-  <!-- Script -->
-  <script>
-    const eventDate = new Date("2025-07-20T08:00:00").getTime();
-    setInterval(() => {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-      const countdown = document.getElementById("countdown");
-      if (distance < 0) {
-        countdown.innerHTML = "Acara telah berlangsung";
-        return;
-      }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      countdown.innerHTML = days + " hari lagi";
-    }, 1000);
-
-    AOS.init({ duration: 1000, once: true });
-  </script>
 </body>
 </html>
